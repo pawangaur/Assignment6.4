@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><!-- Head of the Root -->
+<head> <!-- child sub root of the html tag as head tag  -->
+	<meta charset="UTF-8">
+	<title>Dynamic table</title>
+</head>
+<body>
+<!-- it is a body tag-->
+    
+
+<div id="container"></div>
+<script>
+CreateRow();
+function CreateRow(){
+
+    var cols=Number(prompt("enter the number of columns"));
+    var rows=Number(prompt("enter the number of row"));
+    var div=document.getElementById("container");
+    div.innerHTML = " ";
+      div.innerHTML += "<table border='1' id='newtable'>";
+      var str="<tr>";
+    for (i = 0; i < cols; i++) {
+      str += "<td>Attribute"+(i+1)+"</td>";
+    }
+
+    document.getElementById('newtable').innerHTML += str+"</tr>";
+      for (i = 0; i < rows; i++) {
+
+      var str="<tr>";
+        for (j = 0; j < cols; j++) {
+          str += "<td><input type='text' id= 'att"+(j+1)+"'> </td>";
+      }
+        document.getElementById('newtable').innerHTML +=str+ "</tr>";
+    }
+    document.getElementById('newtable').innerHTML += "</table>";
+  }
+</script>
+
+</body>
+</html>
